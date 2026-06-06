@@ -16,8 +16,8 @@ export default function Home() {
         <section
           className={
             mode === "dark"
-              ? "rounded-3xl border border-white/10 bg-white/5 p-8 shadow-[0_20px_80px_rgba(0,0,0,0.25)]"
-              : "rounded-3xl border border-gray-200 bg-white p-8 shadow-[0_20px_80px_rgba(15,23,42,0.08)]"
+              ? "rounded-3xl border border-white/10 bg-white/5 p-6 shadow-[0_20px_80px_rgba(0,0,0,0.25)] sm:p-8"
+              : "rounded-3xl border border-gray-200 bg-white p-6 shadow-[0_20px_80px_rgba(15,23,42,0.08)] sm:p-8"
           }
         >
           <p
@@ -31,15 +31,15 @@ export default function Home() {
           </p>
 
           <div className="mt-4 max-w-3xl space-y-4">
-            <h1 className="text-4xl font-bold sm:text-5xl">
+            <h1 className="text-3xl font-bold leading-tight sm:text-5xl">
               A simple place to discover everyday products.
             </h1>
 
             <p
               className={
                 mode === "dark"
-                  ? "text-base leading-7 text-slate-300"
-                  : "text-base leading-7 text-slate-600"
+                  ? "text-sm leading-7 text-slate-300 sm:text-base"
+                  : "text-sm leading-7 text-slate-600 sm:text-base"
               }
             >
               This store is built to help customers browse products by category,
@@ -48,7 +48,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mt-8 grid gap-4 sm:grid-cols-3">
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
                 title: "Electronics",

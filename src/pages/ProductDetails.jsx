@@ -36,7 +36,7 @@ export default function ProductDetails() {
 
   if (loading) {
     return (
-      <div className="mx-auto max-w-7xl px-4 py-8">
+      <div className="mx-auto max-w-7xl px-4 py-6 sm:py-8">
         <Loader
           mode={mode}
           title="Loading product details"
@@ -55,74 +55,76 @@ export default function ProductDetails() {
   }
 
   return (
-    <div className="max-w-7xl mx-auto p-6">
-      <div className="grid md:grid-cols-2 gap-10">
+    <div className="mx-auto max-w-7xl px-4 py-5 sm:px-6 sm:py-6 lg:px-8">
+      <div className="grid gap-6 md:grid-cols-2 md:gap-10">
         <div>
           <img
             src={product.images[0]}
             alt={product.title}
-            className="w-full rounded-2xl shadow-lg"
+            className="h-auto w-full rounded-2xl shadow-lg"
           />
 
-          <div className="grid grid-cols-3 gap-4 mt-4">
+          <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4">
             {product.images.map((image, index) => (
               <img
                 key={index}
                 src={image}
                 alt=""
-                className="rounded-xl border"
+                className="aspect-square rounded-xl border object-cover"
               />
             ))}
           </div>
         </div>
 
-        <div className="space-y-5">
-          <span className="bg-cyan-100 text-cyan-700 px-3 py-1 rounded-full text-sm">
+        <div className="space-y-4 sm:space-y-5">
+          <span className="inline-flex w-fit rounded-full bg-cyan-100 px-3 py-1 text-sm text-cyan-700">
             {product.category}
           </span>
 
-          <h1 className="text-4xl font-bold">{product.title}</h1>
+          <h1 className="text-2xl font-bold sm:text-4xl">{product.title}</h1>
 
-          <p className="text-gray-600">{product.description}</p>
+          <p className="text-sm leading-6 text-gray-600 sm:text-base">
+            {product.description}
+          </p>
 
-          <div className="flex items-center gap-5">
-            <p className="text-4xl font-bold text-green-600">
+          <div className="flex flex-wrap items-center gap-3 sm:gap-5">
+            <p className="text-2xl font-bold text-green-600 sm:text-4xl">
               ₹{product.price}
             </p>
-            <p className="bg-cyan-100 text-cyan-700 px-3 py-1 rounded-full text-sm">
+            <p className="w-fit rounded-full bg-cyan-100 px-3 py-1 text-sm text-cyan-700">
               Quantity: {quantity}
             </p>
           </div>
 
-          <div className="space-y-2">
-            <p>
+          <div className="space-y-2 text-sm sm:text-base">
+            <p className="leading-6">
               <span className="font-semibold">Brand:</span> {product.brand}
             </p>
 
-            <p>
+            <p className="leading-6">
               <span className="font-semibold">Stock:</span> {product.stock}
             </p>
 
-            <p>
+            <p className="leading-6">
               <span className="font-semibold">Warranty:</span>{" "}
               {product.warrantyInformation}
             </p>
 
-            <p>
+            <p className="leading-6">
               <span className="font-semibold">Shipping:</span>{" "}
               {product.shippingInformation}
             </p>
 
-            <p>
+            <p className="leading-6">
               <span className="font-semibold">Return Policy:</span>{" "}
               {product.returnPolicy}
             </p>
           </div>
 
-          <div className="flex gap-4">
+          <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
             <button
               onClick={() => dispatch(addtoCart(product))}
-              className="flex-1 py-3 rounded-xl bg-black text-white"
+              className="flex-1 rounded-xl bg-black py-3 text-sm text-white sm:text-base"
             >
               Add To Cart
             </button>
@@ -139,7 +141,7 @@ export default function ProductDetails() {
                       navigate("/dashboard/products");
                     });
               }}
-              className="flex-1 cursor-pointer py-3 rounded-xl bg-cyan-500 text-white"
+              className="flex-1 cursor-pointer rounded-xl bg-cyan-500 py-3 text-sm text-white sm:text-base"
             >
               Buy Now
             </button>
@@ -147,19 +149,21 @@ export default function ProductDetails() {
         </div>
       </div>
 
-      <div className="mt-16">
-        <h2 className="text-3xl font-bold mb-6">Customer Reviews</h2>
+      <div className="mt-10 sm:mt-16">
+        <h2 className="mb-6 text-xl font-bold sm:text-3xl">Customer Reviews</h2>
 
         <div className="space-y-5">
           {product.reviews?.map((review, index) => (
-            <div key={index} className="border rounded-2xl p-5 shadow-sm">
+            <div key={index} className="rounded-2xl border p-5 shadow-sm">
               <div className="flex justify-between">
                 <h3 className="font-semibold">{review.reviewerName}</h3>
 
                 <span className="text-yellow-500">⭐ {review.rating}</span>
               </div>
 
-              <p className="text-gray-600 mt-2">{review.comment}</p>
+              <p className="mt-2 text-sm text-gray-600 sm:text-base">
+                {review.comment}
+              </p>
             </div>
           ))}
         </div>

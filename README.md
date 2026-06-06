@@ -75,6 +75,12 @@ Top-level important folders:
 - Improve accessibility on interactive controls.
 
 If you want, I can expand this README with deployment steps (Netlify/Vercel), API mocking instructions, or contributor guidelines.
+
+## Deployment
+
+- Live demo: https://e-commerce-eta-blush-32.vercel.app/
+
+If you'd like, I can add specific Vercel deployment instructions, environment variable notes, or a deployment badge here.
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

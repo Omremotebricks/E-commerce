@@ -58,8 +58,8 @@ export default function Sort() {
       style={{ colorScheme: mode }}
       className={
         mode === "dark"
-          ? "w-full cursor-pointer rounded-xl border border-slate-700 bg-slate-800 px-4 py-3 text-slate-100 outline-none transition-all focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20"
-          : "w-full cursor-pointer rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-700 outline-none transition-all focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200"
+          ? "w-full cursor-pointer rounded-xl border border-slate-700 bg-slate-800 px-4 py-2.5 text-sm text-slate-100 outline-none transition-all sm:py-3 sm:text-base focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20"
+          : "w-full cursor-pointer rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-700 outline-none transition-all sm:py-3 sm:text-base focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200"
       }
     >
       <option value="">Sort By</option>

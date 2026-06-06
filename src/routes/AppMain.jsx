@@ -18,8 +18,8 @@ export default function AppMain() {
     <div
       className={
         mode === "dark"
-          ? "min-h-screen bg-gray-950 text-white"
-          : "min-h-screen bg-gray-50 text-gray-900"
+          ? "min-h-screen overflow-x-hidden bg-gray-950 text-white"
+          : "min-h-screen overflow-x-hidden bg-gray-50 text-gray-900"
       }
     >
       <Header />

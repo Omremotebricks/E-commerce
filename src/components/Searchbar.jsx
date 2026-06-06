@@ -49,8 +49,8 @@ export default function Searchbar() {
         style={{ colorScheme: mode }}
         className={
           mode === "dark"
-            ? "w-full rounded-xl border border-slate-700 bg-slate-800 px-4 py-3 pl-10 text-slate-100 placeholder:text-slate-500 outline-none transition-all focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20"
-            : "w-full rounded-xl border border-slate-300 bg-white px-4 py-3 pl-10 text-slate-900 placeholder:text-slate-400 outline-none transition-all focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200"
+            ? "w-full rounded-xl border border-slate-700 bg-slate-800 px-4 py-2.5 pl-10 text-sm text-slate-100 placeholder:text-slate-500 outline-none transition-all sm:py-3 sm:text-base focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20"
+            : "w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 pl-10 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition-all sm:py-3 sm:text-base focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200"
         }
       />
     </div>

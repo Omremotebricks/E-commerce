@@ -22,7 +22,7 @@ export default function CartPage() {
       }
     >
       <div className="mx-auto max-w-6xl">
-        <div className="mb-8 flex items-end justify-between gap-4">
+        <div className="mb-6 flex items-end justify-between gap-4 sm:mb-8">
           <div>
             <p
               className={
@@ -33,7 +33,7 @@ export default function CartPage() {
             >
               Checkout
             </p>
-            <h1 className="text-3xl font-bold sm:text-4xl">Cart Page</h1>
+            <h1 className="text-2xl font-bold sm:text-4xl">Cart Page</h1>
           </div>
         </div>
 
@@ -46,18 +46,20 @@ export default function CartPage() {
                   key={item.id}
                   className={
                     mode === "dark"
-                      ? "flex gap-4 rounded-2xl border border-white/10 bg-white/5 p-4 shadow-[0_20px_60px_rgba(0,0,0,0.25)]"
-                      : "flex gap-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-[0_20px_60px_rgba(15,23,42,0.08)]"
+                      ? "flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/5 p-4 shadow-[0_20px_60px_rgba(0,0,0,0.25)] sm:flex-row"
+                      : "flex flex-col gap-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-[0_20px_60px_rgba(15,23,42,0.08)] sm:flex-row"
                   }
                 >
                   <img
                     src={item.images[0]}
                     alt={item.title}
-                    className="h-24 w-24 rounded-xl object-cover"
+                    className="h-32 w-full rounded-xl object-cover sm:h-24 sm:w-24"
                   />
 
                   <div className="flex-1">
-                    <h2 className="text-lg font-semibold">{item.title}</h2>
+                    <h2 className="text-sm font-semibold sm:text-lg">
+                      {item.title}
+                    </h2>
 
                     <p
                       className={
@@ -71,7 +73,7 @@ export default function CartPage() {
                       ₹{item.price}
                     </p>
 
-                    <div className="flex items-center gap-3 mt-3">
+                    <div className="mt-3 flex flex-wrap items-center gap-3">
                       <button
                         onClick={() => dispatch(removeCart(item))}
                         className={
@@ -100,7 +102,7 @@ export default function CartPage() {
 
                   <button
                     onClick={() => dispatch(removeCart(item))}
-                    className="font-medium text-rose-500 transition hover:text-rose-400"
+                    className="self-start font-medium text-rose-500 transition hover:text-rose-400"
                   >
                     Remove
                   </button>
@@ -110,11 +112,13 @@ export default function CartPage() {
               <div
                 className={
                   mode === "dark"
-                    ? "rounded-2xl border border-white/10 bg-white/5 p-8 text-center shadow-[0_20px_60px_rgba(0,0,0,0.25)]"
-                    : "rounded-2xl border border-slate-200 bg-white p-8 text-center shadow-[0_20px_60px_rgba(15,23,42,0.08)]"
+                    ? "rounded-2xl border border-white/10 bg-white/5 p-6 text-center shadow-[0_20px_60px_rgba(0,0,0,0.25)] sm:p-8"
+                    : "rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-[0_20px_60px_rgba(15,23,42,0.08)] sm:p-8"
                 }
               >
-                <h1 className="text-2xl font-semibold">Cart is Empty</h1>
+                <h1 className="text-xl font-semibold sm:text-2xl">
+                  Cart is Empty
+                </h1>
                 <Link
                   className={
                     mode === "dark" ? "mt-2 text-sky-300" : "mt-2 text-sky-500"
@@ -131,11 +135,13 @@ export default function CartPage() {
           <div
             className={
               mode === "dark"
-                ? "h-fit rounded-2xl border border-white/10 bg-white/5 p-6 shadow-[0_20px_60px_rgba(0,0,0,0.25)]"
-                : "h-fit rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_20px_60px_rgba(15,23,42,0.08)]"
+                ? "h-fit rounded-2xl border border-white/10 bg-white/5 p-5 shadow-[0_20px_60px_rgba(0,0,0,0.25)] sm:p-6"
+                : "h-fit rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_20px_60px_rgba(15,23,42,0.08)] sm:p-6"
             }
           >
-            <h2 className="mb-5 text-xl font-semibold">Order Summary</h2>
+            <h2 className="mb-5 text-lg font-semibold sm:text-xl">
+              Order Summary
+            </h2>
 
             <div
               className={
@@ -176,8 +182,8 @@ export default function CartPage() {
               }
               className={
                 mode === "dark"
-                  ? "mt-6 w-full rounded-xl bg-cyan-500 py-3 font-semibold text-gray-950 transition hover:bg-cyan-400 disabled:cursor-not-allowed disabled:bg-gray-700 disabled:text-gray-400 px-4"
-                  : "mt-6 w-full rounded-xl bg-slate-950 py-3 font-semibold text-white transition hover:bg-slate-800 disabled:cursor-not-allowed disabled:bg-slate-300 disabled:text-slate-500 px-4"
+                  ? "mt-6 w-full rounded-xl bg-cyan-500 px-4 py-3 font-semibold text-gray-950 transition hover:bg-cyan-400 disabled:cursor-not-allowed disabled:bg-gray-700 disabled:text-gray-400"
+                  : "mt-6 w-full rounded-xl bg-slate-950 px-4 py-3 font-semibold text-white transition hover:bg-slate-800 disabled:cursor-not-allowed disabled:bg-slate-300 disabled:text-slate-500"
               }
             >
               Proceed to Checkout
